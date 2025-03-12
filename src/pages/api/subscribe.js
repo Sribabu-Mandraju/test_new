@@ -2,9 +2,23 @@
  * API route handler for newsletter subscriptions
  */
 
-import { saveSubscriptionToDatabase } from "../../../src/lib/database";
-import { sendTemplateEmail } from "../../../src/lib/email";
+import { saveSubscriptionToDatabase } from "../../lib/database";
 
+async function sendTemplateEmail(templateName, data, to) {
+  const templates = {
+    "newsletter-welcome": {
+      subject: "Welcome to our Newsletter",
+      text: "Thank you for subscribing to DigitalPro!",
+      html: "<p>Thank you for subscribing to DigitalPro!</p>",
+    },
+  };
+
+  const template = templates[templateName];
+
+  if (!template) throw new Error("Invalid template name");
+
+  return sendEmail({ to, ...template });
+}
 export default async function handler(req, res) {
   // Only allow POST requests
   if (req.method !== "POST") {
