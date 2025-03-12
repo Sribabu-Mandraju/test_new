@@ -42,7 +42,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
-    "date-fns": "4.1.0",
+    "date-fns": "^3.6.0",
     "embla-carousel-react": "8.5.1",
     "framer-motion": "^12.4.10",
     "input-otp": "1.4.1",
@@ -80,5 +80,8 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5",
     "vite": "^6.2.0"
+  },
+  "resolutions": {
+    "date-fns": "3.6.0"
   }
 }
