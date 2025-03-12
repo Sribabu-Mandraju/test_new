@@ -2,8 +2,8 @@
  * API route handler for newsletter subscriptions
  */
 
-import { saveSubscriptionToDatabase } from "../../lib/database";
-import { sendTemplateEmail } from "../../lib/email";
+import { saveSubscriptionToDatabase } from "../../../src/lib/database";
+import { sendTemplateEmail } from "../../../src/lib/email";
 
 export default async function handler(req, res) {
   // Only allow POST requests
